@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBeer", "IBeer\IBeer.csproj", "{403BF477-44EF-4230-A57B-DD5621F6D618}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IBeerStore", "IBeerStore", "{53EF0439-1BDC-4C61-B79E-066B94679201}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DrinksDistributor1", "DrinksDistributor1", "{DF11B9C3-4A1F-46EB-A1A8-B8F44A4A8BBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DrinksDistributor2", "DrinksDistributor2", "{F4A9D314-2166-4C0F-81E1-7BE7EAF28E75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distributor1", "Distributor1\Distributor1.csproj", "{D630B102-4D4F-4005-A861-FD23CBD03EBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIDistributor1", "WebAPIDistributor1\WebAPIDistributor1.csproj", "{6816ED19-AF22-4159-8695-8615FB438F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreDistributor1", "CoreDistributor1\CoreDistributor1.csproj", "{5344E195-39CF-4858-839D-52ABD635D497}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +27,27 @@ Global
 		{403BF477-44EF-4230-A57B-DD5621F6D618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{403BF477-44EF-4230-A57B-DD5621F6D618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{403BF477-44EF-4230-A57B-DD5621F6D618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D630B102-4D4F-4005-A861-FD23CBD03EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D630B102-4D4F-4005-A861-FD23CBD03EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D630B102-4D4F-4005-A861-FD23CBD03EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D630B102-4D4F-4005-A861-FD23CBD03EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6816ED19-AF22-4159-8695-8615FB438F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6816ED19-AF22-4159-8695-8615FB438F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6816ED19-AF22-4159-8695-8615FB438F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6816ED19-AF22-4159-8695-8615FB438F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5344E195-39CF-4858-839D-52ABD635D497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5344E195-39CF-4858-839D-52ABD635D497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5344E195-39CF-4858-839D-52ABD635D497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5344E195-39CF-4858-839D-52ABD635D497}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{403BF477-44EF-4230-A57B-DD5621F6D618} = {53EF0439-1BDC-4C61-B79E-066B94679201}
+		{D630B102-4D4F-4005-A861-FD23CBD03EBA} = {DF11B9C3-4A1F-46EB-A1A8-B8F44A4A8BBC}
+		{6816ED19-AF22-4159-8695-8615FB438F5F} = {DF11B9C3-4A1F-46EB-A1A8-B8F44A4A8BBC}
+		{5344E195-39CF-4858-839D-52ABD635D497} = {DF11B9C3-4A1F-46EB-A1A8-B8F44A4A8BBC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E416B75-844A-432B-8469-6076607E7AF4}
