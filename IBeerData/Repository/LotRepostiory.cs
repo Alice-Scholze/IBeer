@@ -5,12 +5,16 @@ using System.Linq;
 
 namespace IBeerData.Repository
 {
-    public class DrinkRepository
+    public class LotRepostiory
     {
         private IBeerContext db;
-        public List<Drink> GetAll()
+        public List<Lot> GetAll()
         {
-            return db.Drinks.ToList();
+            return db.Lots.ToList();
+        }
+        public Lot GetByID(int id)
+        {
+            return db.Lots.Single(l => l.Id == id);
         }
     }
 }

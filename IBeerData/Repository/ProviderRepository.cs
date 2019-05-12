@@ -5,12 +5,12 @@ using System.Linq;
 
 namespace IBeerData.Repository
 {
-    public class DrinkRepository
+    public class ProviderRepository
     {
         private IBeerContext db;
-        public List<Drink> GetAll()
+        public List<Provider> GetAll()
         {
-            return db.Drinks.ToList();
+            return db.Providers.ToList();
         }
     }
 }
