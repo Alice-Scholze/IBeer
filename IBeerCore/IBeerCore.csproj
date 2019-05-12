@@ -44,10 +44,14 @@
     <Compile Include="Entities\Base.cs" />
     <Compile Include="Entities\Drink.cs" />
     <Compile Include="Entities\Lot.cs" />
+    <Compile Include="Entities\Parameter.cs" />
     <Compile Include="Entities\Provider.cs" />
     <Compile Include="Entities\PurchaseOrder.cs" />
     <Compile Include="Entities\PurchaseOrderItem.cs" />
     <Compile Include="Entities\Stock.cs" />
+    <Compile Include="Enum\Parameters.cs" />
+    <Compile Include="Enum\PurchaseOrderStatus.cs" />
+    <Compile Include="Enum\StockIdeal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

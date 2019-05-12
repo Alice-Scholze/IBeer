@@ -1,5 +1,6 @@
 ﻿using IBeerCore.Entities;
 using IBeerData.Repository;
+using IBeerService.POCO;
 using System.Collections.Generic;
 
 namespace IBeerService.Services

@@ -6,7 +6,8 @@ namespace IBeerCore.Entities
     {
         public String Name { get; private set; }
         public Int64 Cnpj { get; private set; }
-        public string Api { get; private set; }
+        public string ApiDrink { get; private set; }
+        public string ApiPurchaseOrder { get; private set; }
 
         public Provider SetSquentialId(int id)
         {
@@ -23,9 +24,14 @@ namespace IBeerCore.Entities
             Cnpj = cnpj;
             return this;
         }
-        public Provider SetApi(string api)
+        public Provider SetApiDrink(string api)
         {
-            Api = api;
+            ApiDrink = api;
+            return this;
+        }
+        public Provider SetApiPurchaseOrder(string api)
+        {
+            ApiPurchaseOrder = api;
             return this;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using CoreDistributor1.Entities;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -13,18 +14,12 @@ namespace WebAPIDistributor1.Controllers
         }
 
         // GET: api/Drinks/5
-        public IHttpActionResult Get(int id)
+        public IHttpActionResult Get(Int64 id)
         {
             Drinks drink = new Drinks().GetDrinksById(id);
             if (drink == null)
                 return NotFound();
             return Ok(drink);
-        }
-
-        // GET: api/Drinks/Coca Cola
-        public Drinks Get(string name)
-        {
-            return new Drinks().GetDrinksByName(name);
         }
 
         // POST: api/Drinks

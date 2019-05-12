@@ -1,0 +1,30 @@
+﻿@model List<IBeerCore.Entities.Parameter>
+@{
+    ViewBag.Title = "Parameters";
+}
+
+<h2>Parameters</h2>
+<br />
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Parametro</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var parameter in Model)
+                {
+                    <tr>
+                        <td>@parameter.Description</td>
+                        <td>@parameter.Value</td>
+                        <td>@Html.ActionLink("Edit", "Parameter/" + parameter.Description)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

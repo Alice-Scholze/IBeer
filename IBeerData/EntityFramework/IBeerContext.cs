@@ -16,6 +16,7 @@ namespace IBeerData.EntityFramework
         public DbSet<Provider> Providers { get; set; }
         public DbSet<PurchaseOrder> PurchaseOrders { get; set; }
         public DbSet<PurchaseOrderItem> PurchaseOrderItems { get; set; }
+        public DbSet<Parameter> Parameters { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

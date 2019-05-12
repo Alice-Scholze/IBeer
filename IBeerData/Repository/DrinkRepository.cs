@@ -7,7 +7,7 @@ namespace IBeerData.Repository
 {
     public class DrinkRepository
     {
-        private IBeerContext db;
+        private IBeerContext db = new IBeerContext();
         public List<Drink> GetAll()
         {
             return db.Drinks.ToList();

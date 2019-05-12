@@ -19,17 +19,17 @@ namespace IBeerCore.Entities
             Purchase = purchase;
             return this;
         }
-        public PurchaseOrderItem SetBarCode(int barCode)
+        public PurchaseOrderItem SetBarCode(Int64 barCode)
         {
             BarCode = barCode;
             return this;
         }
-        public PurchaseOrderItem SetAmount(int amount)
+        public PurchaseOrderItem SetAmount(Int64 amount)
         {
             Amount = amount;
             return SetTotal();
         }
-        public PurchaseOrderItem SetValue(int value)
+        public PurchaseOrderItem SetValue(float value)
         {
             Value = value;
             return SetTotal();

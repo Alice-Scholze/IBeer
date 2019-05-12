@@ -1,4 +1,5 @@
-﻿using IBeerCore.Entities;
+﻿using IBeer.ViewModel;
+using IBeerCore.Entities;
 using IBeerService.Services;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,19 @@ namespace IBeer.Controllers
         public ActionResult Index()
         {
             List<Drink> drinks = new DrinkService().GetAll();
-            return View(drinks);
+            List<VMDrink> vms = new List<VMDrink>();
+            foreach(var drink in drinks)
+            {
+                vms.Add(new VMDrink()
+                            .SetName(drink.Name)
+                            .SetBarCode(drink.BarCode)
+                            .SetAmount(drink.Amount)
+                            .SetLot(drink.LotID)
+                            .SetLot(new LotService().GetByID(drink.LotID))
+                            .SetStock(new StockService().GetByDrink(drink.BarCode))
+                );
+            }
+            return View(vms);
         }
 
         public ActionResult About()

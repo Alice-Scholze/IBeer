@@ -7,7 +7,7 @@ namespace IBeerData.Repository
 {
     public class PurchaseOrderItemRepository
     {
-        private IBeerContext db;
+        private IBeerContext db = new IBeerContext();
         public List<PurchaseOrderItem> GetAll()
         {
             return db.PurchaseOrderItems.ToList();

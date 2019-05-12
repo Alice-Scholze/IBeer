@@ -12,5 +12,10 @@ namespace IBeerData.Repository
         {
             return db.PurchaseOrders.ToList();
         }
+        public void Add(PurchaseOrder purchase)
+        {
+            db.PurchaseOrders.Add(purchase);
+            db.SaveChanges();
+        }
     }
 }

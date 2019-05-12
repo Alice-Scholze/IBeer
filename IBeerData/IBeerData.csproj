@@ -82,10 +82,23 @@
     <Compile Include="Migrations\201905121559181_Edit6.Designer.cs">
       <DependentUpon>201905121559181_Edit6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905121849132_Edit7.cs" />
+    <Compile Include="Migrations\201905121849132_Edit7.Designer.cs">
+      <DependentUpon>201905121849132_Edit7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905122042378_Edit8.cs" />
+    <Compile Include="Migrations\201905122042378_Edit8.Designer.cs">
+      <DependentUpon>201905122042378_Edit8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905122046359_Edit9.cs" />
+    <Compile Include="Migrations\201905122046359_Edit9.Designer.cs">
+      <DependentUpon>201905122046359_Edit9.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DrinkRepository.cs" />
     <Compile Include="Repository\LotRepostiory.cs" />
+    <Compile Include="Repository\ParameterRepository.cs" />
     <Compile Include="Repository\ProviderRepository.cs" />
     <Compile Include="Repository\PurchaseOrderItemRepository.cs" />
     <Compile Include="Repository\PurchaseOrderRepository.cs" />
@@ -119,6 +132,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905121559181_Edit6.resx">
       <DependentUpon>201905121559181_Edit6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905121849132_Edit7.resx">
+      <DependentUpon>201905121849132_Edit7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905122042378_Edit8.resx">
+      <DependentUpon>201905122042378_Edit8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905122046359_Edit9.resx">
+      <DependentUpon>201905122046359_Edit9.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

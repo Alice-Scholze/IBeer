@@ -1,6 +1,7 @@
 namespace IBeerData.Migrations
 {
     using IBeerCore.Entities;
+    using IBeerCore.Enum;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
@@ -15,6 +16,14 @@ namespace IBeerData.Migrations
 
         protected override void Seed(IBeerData.EntityFramework.IBeerContext context)
         {
+            var parameters = new List<Parameter>
+            {
+               new Parameter().SetParameter(Parameters.StockIdeal.ToString(), StockIdeal.MediumValue.GetHashCode().ToString()),
+               new Parameter().SetParameter(Parameters.AutomaticPurchaseOrder.ToString(), false.ToString())
+            };
+            parameters.ForEach(s => context.Parameters.AddOrUpdate(p => p.Value, s));
+            context.SaveChanges();
+
             var lots = new List<Lot>
             {
                 new Lot().SetDespription("LT01").SetShelfLife(new DateTime(2019,11,27)),
@@ -52,8 +61,8 @@ namespace IBeerData.Migrations
 
             var provider = new List<Provider>
             {
-                new Provider().SetName("Distribuidor 1").SetCnpj(00000000000).SetApi(""),
-                new Provider().SetName("Distribuidor 2").SetCnpj(11111111111).SetApi("")
+                new Provider().SetName("Distribuidor 1").SetCnpj(00000000000).SetApiDrink("http://localhost:62021/api/Drinks").SetApiPurchaseOrder(""),
+                new Provider().SetName("Distribuidor 2").SetCnpj(11111111111).SetApiDrink("http://localhost:51393/api/Drink").SetApiPurchaseOrder("")
             };
             provider.ForEach(s => context.Providers.AddOrUpdate(p => p.Cnpj, s));
             context.SaveChanges();

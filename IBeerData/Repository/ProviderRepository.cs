@@ -7,7 +7,7 @@ namespace IBeerData.Repository
 {
     public class ProviderRepository
     {
-        private IBeerContext db;
+        private IBeerContext db = new IBeerContext();
         public List<Provider> GetAll()
         {
             return db.Providers.ToList();

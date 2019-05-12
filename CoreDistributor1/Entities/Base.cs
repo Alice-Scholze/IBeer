@@ -1,7 +1,9 @@
-﻿namespace CoreDistributor1.Entities
+﻿using System;
+
+namespace CoreDistributor1.Entities
 {
     public class Base
     {
-        public int Id { get; set; }
+        public Int64 Id { get; set; }
     }
 }
