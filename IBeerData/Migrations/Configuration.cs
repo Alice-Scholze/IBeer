@@ -37,6 +37,17 @@ namespace IBeerData.Migrations
             };
             drinks.ForEach(s => context.Drinks.AddOrUpdate(p => p.BarCode, s));
             context.SaveChanges();
+
+            var stocks = new List<Stock>
+            {
+                new Stock().SetDrink(drinks.Single(d => d.BarCode == 7894900019841).Id).SetCritical(3).SetMaximun(50).SetMinimun(7),
+                new Stock().SetDrink(drinks.Single(d => d.BarCode == 7894900039849).Id).SetCritical(3).SetMaximun(50).SetMinimun(7),
+                new Stock().SetDrink(drinks.Single(d => d.BarCode == 7894900919868).Id).SetCritical(3).SetMaximun(50).SetMinimun(7),
+                new Stock().SetDrink(drinks.Single(d => d.BarCode == 7891991010481).Id).SetCritical(3).SetMaximun(50).SetMinimun(7),
+                new Stock().SetDrink(drinks.Single(d => d.BarCode == 7896045523412).Id).SetCritical(3).SetMaximun(50).SetMinimun(7)
+            };
+            stocks.ForEach(s => context.Stocks.AddOrUpdate(p => p.Drink, s));
+            context.SaveChanges();
         }
     }
 }

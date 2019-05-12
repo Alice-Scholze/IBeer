@@ -12,6 +12,7 @@ namespace IBeerData.EntityFramework
         }
         public DbSet<Drink> Drinks { get; set; }
         public DbSet<Lot> Lots { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

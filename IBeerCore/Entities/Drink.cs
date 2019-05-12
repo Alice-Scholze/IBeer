@@ -6,7 +6,7 @@ namespace IBeerCore.Entities
     {
         public String Name { get; private set; }
         public Int64 BarCode { get; private set; }
-        public Int64 LotId { get; private set; }
+        public Int64 LotID { get; private set; }
         public Int64 Amount { get; private set; }
 
         public Drink SetSequentialId(int id)
@@ -24,9 +24,9 @@ namespace IBeerCore.Entities
             BarCode = barCode;
             return this;
         }
-        public Drink SetLot(Int64 lotId)
+        public Drink SetLot(Int64 lot)
         {
-            this.LotId = lotId;
+            this.LotID = lot;
             return this;
         }
         public Drink SetAmount(Int64 amount)

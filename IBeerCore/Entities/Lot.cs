@@ -13,7 +13,11 @@ namespace IBeerCore.Entities
         {
             Drinks = new List<Drink>();
         }
-
+        public Lot SetSequentialId(int id)
+        {
+            Id = id;
+            return this;
+        }
         public Lot SetDespription(string despription)
         {
             Despription = despription;

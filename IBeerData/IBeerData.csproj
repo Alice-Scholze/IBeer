@@ -58,6 +58,22 @@
     <Compile Include="Migrations\201905120319077_Edit.Designer.cs">
       <DependentUpon>201905120319077_Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905121349177_Edit1.cs" />
+    <Compile Include="Migrations\201905121349177_Edit1.Designer.cs">
+      <DependentUpon>201905121349177_Edit1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905121357183_Edit2.cs" />
+    <Compile Include="Migrations\201905121357183_Edit2.Designer.cs">
+      <DependentUpon>201905121357183_Edit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905121409069_Edit3.cs" />
+    <Compile Include="Migrations\201905121409069_Edit3.Designer.cs">
+      <DependentUpon>201905121409069_Edit3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905121410152_Edit4.cs" />
+    <Compile Include="Migrations\201905121410152_Edit4.Designer.cs">
+      <DependentUpon>201905121410152_Edit4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DrinkRepository.cs" />
@@ -72,6 +88,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905120319077_Edit.resx">
       <DependentUpon>201905120319077_Edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905121349177_Edit1.resx">
+      <DependentUpon>201905121349177_Edit1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905121357183_Edit2.resx">
+      <DependentUpon>201905121357183_Edit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905121409069_Edit3.resx">
+      <DependentUpon>201905121409069_Edit3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905121410152_Edit4.resx">
+      <DependentUpon>201905121410152_Edit4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
