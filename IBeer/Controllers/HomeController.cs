@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IBeerCore.Entities;
+using IBeerService.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,8 @@ namespace IBeer.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<Drink> drinks = new DrinkService().GetAll();
+            return View(drinks);
         }
 
         public ActionResult About()
