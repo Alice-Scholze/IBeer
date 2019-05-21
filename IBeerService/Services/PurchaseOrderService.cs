@@ -25,7 +25,7 @@ namespace IBeerService.Services
                 cnpj = 0;
                 foreach (var provider in providers)
                 {
-                    var drinkProvider = new ProviderService().GetProviderDrinkAsync(provider.ApiDrink, drink.Drink).Result;
+                    var drinkProvider = new ProviderService().GetProviderDrinkAsync(provider.ApiDrink, drink.Drink);
                     if (drinkProvider != null)
                     {
                         if(value == 0 || drinkProvider.Value < value)

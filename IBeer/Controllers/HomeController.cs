@@ -1,10 +1,7 @@
 ﻿using IBeer.ViewModel;
 using IBeerCore.Entities;
 using IBeerService.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace IBeer.Controllers
@@ -27,20 +24,6 @@ namespace IBeer.Controllers
                 );
             }
             return View(vms);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }
