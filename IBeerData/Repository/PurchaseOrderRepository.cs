@@ -20,7 +20,9 @@ namespace IBeerData.Repository
         }
         public PurchaseOrder GetById(int id)
         {
-            return db.PurchaseOrders.Where(p => p.Id == id).SingleOrDefault();
+            var purchase = db.PurchaseOrders.Where(p => p.Id == id).SingleOrDefault();
+            purchase.Itens = new PurchaseOrderItemRepository().GetByPurchase(purchase.Id);
+            return purchase;
         }
 
         public void Add(PurchaseOrder purchase)

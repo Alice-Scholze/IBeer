@@ -1,12 +1,15 @@
-﻿using CoreDistributor1.Entities;
+﻿using CoreDistribuidor2.Entities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
-namespace WebAPIDistributor1.Controllers
+namespace WebAPIDistribuidor2.Controllers
 {
     public class PurchaseOrderController : ApiController
     {
-        // GET: api/PurchaseOrder
         public List<PurchaseOrder> Get()
         {
             return new PurchaseOrder().GetPurchaseOrders();

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CoreDistributor1.Entities
+namespace CoreDistribuidor2.Entities
 {
-    public class PurchaseOrder : Base
+    public class PurchaseOrder
     {
         public static List<PurchaseOrder> purchaseOrders = new List<PurchaseOrder>();
+        public Int64 Id { get; set; }
         public Int64 Provider { get; set; }
         public List<PurchaseOrderItem> Itens { get; set; }
         public Double Total { get; set; }

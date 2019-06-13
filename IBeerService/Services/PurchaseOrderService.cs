@@ -53,6 +53,7 @@ namespace IBeerService.Services
                                 .SetBarCode(barCode)
                                 .SetValue(value)
                                 .SetAmount(quantity))
+                            .SetTotal()
                     );
                 }
             }
