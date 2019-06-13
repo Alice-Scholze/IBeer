@@ -57,7 +57,7 @@ namespace TesteAzure
 
                 // Request headers.
                 client.DefaultRequestHeaders.Add(
-                    "", subscriptionKey);
+                    "Ocp-Apim-Subscription-Key", subscriptionKey);
 
                 // Request parameters. 
                 // The language parameter doesn't specify a language, so the 

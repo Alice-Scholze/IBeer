@@ -12,5 +12,9 @@ namespace IBeerData.Repository
         {
             return db.PurchaseOrderItems.ToList();
         }
+        public List<PurchaseOrderItem> GetByPurchase(int purchaseId)
+        {
+            return db.PurchaseOrderItems.Where(p => p.PurchaseOrder_Id == purchaseId).ToList();
+        }
     }
 }

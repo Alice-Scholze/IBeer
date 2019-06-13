@@ -94,6 +94,14 @@
     <Compile Include="Migrations\201905122046359_Edit9.Designer.cs">
       <DependentUpon>201905122046359_Edit9.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906130016148_Edit10.cs" />
+    <Compile Include="Migrations\201906130016148_Edit10.Designer.cs">
+      <DependentUpon>201906130016148_Edit10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906130217224_Edit11.cs" />
+    <Compile Include="Migrations\201906130217224_Edit11.Designer.cs">
+      <DependentUpon>201906130217224_Edit11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DrinkRepository.cs" />
@@ -141,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905122046359_Edit9.resx">
       <DependentUpon>201905122046359_Edit9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130016148_Edit10.resx">
+      <DependentUpon>201906130016148_Edit10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130217224_Edit11.resx">
+      <DependentUpon>201906130217224_Edit11.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

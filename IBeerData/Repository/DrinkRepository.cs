@@ -1,5 +1,6 @@
 ﻿using IBeerCore.Entities;
 using IBeerData.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,6 +12,10 @@ namespace IBeerData.Repository
         public List<Drink> GetAll()
         {
             return db.Drinks.ToList();
+        }
+        public Drink GetByBarCode(Int64 barCode)
+        {
+            return db.Drinks.Where(d => d.BarCode == barCode).FirstOrDefault();
         }
     }
 }

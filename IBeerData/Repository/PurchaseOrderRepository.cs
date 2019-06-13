@@ -7,14 +7,36 @@ namespace IBeerData.Repository
 {
     public class PurchaseOrderRepository
     {
-        private IBeerContext db;
+        private IBeerContext db = new IBeerContext();
         public List<PurchaseOrder> GetAll()
         {
-            return db.PurchaseOrders.ToList();
+            List<PurchaseOrder> purchases = db.PurchaseOrders.ToList();
+            foreach(var purchase in purchases)
+            {
+                purchase.Itens = new PurchaseOrderItemRepository().GetByPurchase(purchase.Id);
+            }
+
+            return purchases;
         }
+        public PurchaseOrder GetById(int id)
+        {
+            return db.PurchaseOrders.Where(p => p.Id == id).SingleOrDefault();
+        }
+
         public void Add(PurchaseOrder purchase)
         {
             db.PurchaseOrders.Add(purchase);
+            db.SaveChanges();
+        }
+
+        public void Update(PurchaseOrder purchase)
+        {
+            PurchaseOrder purchaseEntity = db.PurchaseOrders.Where(p => p.Id == purchase.Id).SingleOrDefault();
+            purchaseEntity
+                .SetProvider(purchase.Provider)
+                .SetStatus(purchase.Status)
+                .SetTotal();
+
             db.SaveChanges();
         }
     }

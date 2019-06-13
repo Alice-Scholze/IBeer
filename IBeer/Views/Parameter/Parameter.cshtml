@@ -1,7 +1,21 @@
-﻿
+﻿@model IBeerCore.Entities.Parameter
 @{
-    ViewBag.Title = "Parameter";
+ViewBag.Title = "Parameter";
 }
+}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        @using (Html.BeginForm("Edit", "Parameter", FormMethod.Post))
+        {
+            @Html.Label("Description:")
+            @Html.TextBoxFor(m => m.Description)
+            <br />
+            @Html.Label("Valor:")
+            @Html.TextBoxFor(m => m.Value)
 
+            <input type="submit" value="Save">
+        }
+    </div>
+</div>
 
 

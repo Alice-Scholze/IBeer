@@ -1,0 +1,61 @@
+﻿@model List<IBeer.ViewModel.VMPurchase>
+@{
+    ViewBag.Title = "Purchases";
+}
+
+<h2>Ordens de Compra</h2>
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Fornecedor</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var purchase in Model)
+                {
+                <tr>
+                    <td>@purchase.Provider</td>
+                    @if (purchase.Status == 1)
+                    {
+                        <td>Aguardando Aprovação</td>
+                    }
+                    @if (purchase.Status == 2)
+                    {
+                        <td>Reprovado</td>
+                    }
+                    @if (purchase.Status == 3)
+                    {
+                        <td>Aprovado</td>
+                    }
+                    @if (purchase.Status == 4)
+                    {
+                        <td>Aprovado automaticamente</td>
+                    }
+                    <td>@purchase.Total.ToString("N2")</td>
+                    @if (purchase.Status == 1)
+                    {
+                        <td>@Html.ActionLink("Aprovar", "Update", new { id = purchase.Id, status = 3 })</td>
+                        <td>@Html.ActionLink("Reprovar", "Update", new { id = purchase.Id, status = 2 })</td>
+                    }
+
+                </tr>
+                <tr>
+                    @foreach (var itens in purchase.Itens)
+                    {
+                        <td>Produto: @itens.BarCode - @itens.Description</td>
+                        <td>Quantidade: @itens.Amount</td>
+                        <td>Valor: R$ @itens.Value.ToString("N2")</td>
+                        <td>Total: R$ @itens.Total.ToString("N2")</td>
+                     }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

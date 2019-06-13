@@ -38,17 +38,17 @@ namespace IBeerService.Services
                 if(cnpj != 0)
                 {
                     Int64 quantity = 0;
-                    if (stockIdeal.ToString() == StockIdeal.MaximunValue.ToString())
+                    if (Convert.ToInt16(stockIdeal.Value) == StockIdeal.MaximunValue.GetHashCode())
                         quantity = drink.Maximun - drink.Amount;
-                    else if (stockIdeal.ToString() == StockIdeal.MediumValue.ToString())
+                    else if (Convert.ToInt16(stockIdeal.Value) == StockIdeal.MediumValue.GetHashCode())
                         quantity = (drink.Minimun + drink.Maximun) / 2;
-                    else if (stockIdeal.ToString() == StockIdeal.MinimunValue.ToString())
+                    else if (Convert.ToInt16(stockIdeal.Value) == StockIdeal.MinimunValue.GetHashCode())
                         quantity = drink.Minimun;
 
                     purchases.Add(
                         new PurchaseOrder()
                             .SetProvider(cnpj)
-                            .SetStatus(automatic.Value == "true" ? PurchaseOrderStatus.AutomaticallyApproved : PurchaseOrderStatus.Waiting)
+                            .SetStatus(automatic.Value == "True" ? PurchaseOrderStatus.AutomaticallyApproved.GetHashCode() : PurchaseOrderStatus.Waiting.GetHashCode())
                             .AddItens(new PurchaseOrderItem()
                                 .SetBarCode(barCode)
                                 .SetValue(value)
@@ -59,6 +59,30 @@ namespace IBeerService.Services
             foreach(var purchase in purchases){
                 new PurchaseOrderRepository().Add(purchase);
             }
+        }
+
+        public List<PurchaseOrder> GetAll()
+        {
+            return new PurchaseOrderRepository().GetAll();
+        }
+
+        public PurchaseOrder GetById(int id)
+        {
+            return new PurchaseOrderRepository().GetById(id);
+        }
+
+        public void Update(PurchaseOrder purchase)
+        {
+            new PurchaseOrderRepository().Update(purchase);
+            if(purchase.Status == PurchaseOrderStatus.Approved.GetHashCode())
+            {
+                var provider = new ProviderService().GetByCnpj(purchase.Provider);
+                PurchaseOrderProvider(provider.ApiPurchaseOrder, purchase);
+            }
+        }
+        public void PurchaseOrderProvider(string api, PurchaseOrder purchase)
+        {
+            new ProviderService().GeneratePurchaseOrder(api, purchase);
         }
     }
 }

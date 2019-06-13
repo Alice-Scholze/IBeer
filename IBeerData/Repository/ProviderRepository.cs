@@ -12,5 +12,10 @@ namespace IBeerData.Repository
         {
             return db.Providers.ToList();
         }
+
+        public Provider GetByCnpj(long cnpj)
+        {
+            return db.Providers.Where(p => p.Cnpj == cnpj).FirstOrDefault();
+        }
     }
 }

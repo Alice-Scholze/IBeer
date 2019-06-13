@@ -19,8 +19,9 @@ namespace WebAPIDistributor1.Controllers
         }
 
         // POST: api/PurchaseOrder
-        public void Post([FromBody]string value)
+        public void Post([FromBody]PurchaseOrder purchase)
         {
+            //oi
         }
 
         // PUT: api/PurchaseOrder/5

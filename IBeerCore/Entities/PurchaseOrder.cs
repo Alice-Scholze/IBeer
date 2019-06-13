@@ -40,9 +40,9 @@ namespace IBeerCore.Entities
             Total = Itens.Sum(i => i.Total);
             return this;
         }
-        public PurchaseOrder SetStatus(PurchaseOrderStatus status)
+        public PurchaseOrder SetStatus(int status)
         {
-            Status = status.GetHashCode();
+            Status = status;
             return this;
         }
     }

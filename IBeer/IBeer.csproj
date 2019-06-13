@@ -142,6 +142,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\VMDrink.cs" />
     <Compile Include="ViewModel\VMParameter.cs" />
+    <Compile Include="ViewModel\VMPurchase.cs" />
+    <Compile Include="ViewModel\VMPurchaseOrderItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -180,6 +182,9 @@
     <Content Include="Views\Parameter\Parameters.cshtml" />
     <Content Include="Views\Parameter\Parameter.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Parameter\Edit.cshtml" />
+    <Content Include="Views\PurchaseOrder\Purchases.cshtml" />
+    <Content Include="Views\PurchaseOrder\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

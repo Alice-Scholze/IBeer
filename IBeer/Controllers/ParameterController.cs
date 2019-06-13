@@ -14,8 +14,22 @@ namespace IBeer.Controllers
             return View(parameters);
         }
         
-        public ActionResult Parameter(string description)
+        public ActionResult Parameter(int id)
         {
+            Parameter parameter = new ParameterService().GetById(id);
+            return View(parameter);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Parameter VMparameter)
+        {
+            ViewBag.Result = "Edição realizada com sucesso";
+            if (ModelState.IsValid)
+            {
+                new ParameterService().Update(VMparameter);
+                return View();
+            }
+            ViewBag.Result = "Erro ao editar parametro";
             return View();
         }
     }

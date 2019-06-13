@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Web.Script.Serialization;
+using System.Net.Http.Formatting;
 
 namespace IBeerService.Services
 {
@@ -28,9 +29,29 @@ namespace IBeerService.Services
             }
             return drinkProvider;
         }
+
+        public void GeneratePurchaseOrder(string api, PurchaseOrder purchase)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(api);
+                var response = client.PostAsJsonAsync("", purchase).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    Console.Write("Success");
+                }
+                else
+                    Console.Write("Error");
+            }
+        }
+
         public List<Provider> GetAll()
         {
             return new ProviderRepository().GetAll();
+        }
+        public Provider GetByCnpj(long cnpj)
+        {
+            return new ProviderRepository().GetByCnpj(cnpj);
         }
     }
 }

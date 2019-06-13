@@ -4,7 +4,7 @@ namespace IBeerCore.Entities
 {
     public class PurchaseOrderItem : Base
     {
-        public Int64 Purchase { get; private set; }
+        public Int64 PurchaseOrder_Id { get; private set; }
         public Int64 BarCode { get; private set; }
         public Int64 Amount { get; private set; }
         public Double Value { get; private set; }
@@ -16,7 +16,7 @@ namespace IBeerCore.Entities
         }
         public PurchaseOrderItem SetPurchase(int purchase)
         {
-            Purchase = purchase;
+            PurchaseOrder_Id = purchase;
             return this;
         }
         public PurchaseOrderItem SetBarCode(Int64 barCode)
