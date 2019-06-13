@@ -2,17 +2,35 @@
 @{
 ViewBag.Title = "Parameter";
 }
-}
+
+<h2>Parâmetro</h2>
+
 <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-12">
         @using (Html.BeginForm("Edit", "Parameter", FormMethod.Post))
         {
-            @Html.Label("Description:")
-            @Html.TextBoxFor(m => m.Description)
-            <br />
-            @Html.Label("Valor:")
-            @Html.TextBoxFor(m => m.Value)
+            if (Model.Description == "StockIdeal")
+            {
+                @Html.HiddenFor(x => x.Id)
+                @Html.Label("Description:")
+                @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                <br />
+                @Html.Label("Valor:")
+                @Html.DropDownListFor(x => x.Value, new List<SelectListItem>() { new SelectListItem { Text = "Mínimo", Value = "1" }, new SelectListItem { Text = "Médio", Value = "2" }, new SelectListItem { Text = "Máximo", Value = "3" } }, new { @class = "form-control" })
 
+            }
+            else
+            {
+                @Html.HiddenFor(x => x.Id)
+                @Html.Label("Description:")
+                @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+                <br />
+                @Html.Label("Valor:")
+                @Html.DropDownListFor(x => x.Value, new List<SelectListItem>() { new SelectListItem { Text = "Sim", Value = "True" }, new SelectListItem { Text = "Não", Value = "False" } }, new { @class = "form-control" })
+
+            }
+
+            <br />
             <input type="submit" value="Save">
         }
     </div>

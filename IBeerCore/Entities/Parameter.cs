@@ -4,8 +4,8 @@ namespace IBeerCore.Entities
 {
     public class Parameter : Base
     {
-        public String Description { get; private set; }
-        public String Value { get; private set; }
+        public String Description { get; set; }
+        public String Value { get; set; }
 
         public Parameter SetParameter(string parameter, string value)
         {

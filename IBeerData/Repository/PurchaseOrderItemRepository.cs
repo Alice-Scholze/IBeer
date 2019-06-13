@@ -16,5 +16,16 @@ namespace IBeerData.Repository
         {
             return db.PurchaseOrderItems.Where(p => p.PurchaseOrder_Id == purchaseId).ToList();
         }
+        public void Edit()
+        {
+            var resultado = (from r in db.PurchaseOrders
+                             orderby r.Id descending
+                             select r).First();
+            var item = (from r in db.PurchaseOrderItems
+                        orderby r.Id descending
+                        select r).First();
+            item.SetPurchase(resultado.Id);
+            db.SaveChanges();
+        }
     }
 }

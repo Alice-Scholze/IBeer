@@ -1,4 +1,5 @@
 ﻿using CoreDistributor1.Entities;
+using System;
 using System.Collections.Generic;
 using System.Web.Http;
 
@@ -6,16 +7,29 @@ namespace WebAPIDistributor1.Controllers
 {
     public class PurchaseOrderController : ApiController
     {
-        // GET: api/PurchaseOrder
-        public List<PurchaseOrder> Get()
+        public IHttpActionResult Get()
         {
-            return new PurchaseOrder().GetPurchaseOrders();
+            try
+            {
+                return Ok(new PurchaseOrder().GetPurchaseOrders());
+            }
+            catch (Exception e)
+            {
+                return NotFound();
+            }
         }
 
         // GET: api/PurchaseOrder/5
-        public PurchaseOrder Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return new PurchaseOrder().GetById(id);
+            try
+            {
+                return Ok(new PurchaseOrder().GetById(id));
+            }
+            catch (Exception e)
+            {
+                return NotFound();
+            }
         }
 
         // POST: api/PurchaseOrder

@@ -29,6 +29,7 @@ namespace IBeerData.Repository
         {
             db.PurchaseOrders.Add(purchase);
             db.SaveChanges();
+            new PurchaseOrderItemRepository().Edit();
         }
 
         public void Update(PurchaseOrder purchase)

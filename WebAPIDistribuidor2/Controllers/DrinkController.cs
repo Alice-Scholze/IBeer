@@ -7,18 +7,33 @@ namespace WebAPIDistribuidor2.Controllers
 {
     public class DrinkController : ApiController
     {
-        public List<Drink> Get()
+        public IHttpActionResult Get()
         {
-            return new Drink().GetDrink();
+            try
+            {
+                return Ok(new Drink().GetDrink());
+            }
+            catch(Exception e)
+            {
+                return NotFound();
+            }
         }
 
         // GET: api/Drink/5
         public IHttpActionResult Get(Int64 id)
         {
-            Drink drink = new Drink().GetDrinkById(id);
-            if (drink == null)
+            try
+            {
+                Drink drink = new Drink().GetDrinkById(id);
+                if (drink == null)
+                    return NotFound();
+                return Ok(drink);
+            }
+            catch (Exception e)
+            {
                 return NotFound();
-            return Ok(drink);
+            }
+            
         }
 
         // POST: api/Drink

@@ -17,6 +17,7 @@ namespace IBeerService.Services
             List<PurchaseOrder> purchases = new List<PurchaseOrder>();
             long cnpj, barCode;
             float value;
+            string api = "";
 
             foreach(var drink in stock)
             {
@@ -32,6 +33,7 @@ namespace IBeerService.Services
                         {
                             cnpj = provider.Cnpj;
                             value = drinkProvider.Value;
+                            api = provider.ApiPurchaseOrder;
                         }
                     }
                 }
@@ -59,6 +61,7 @@ namespace IBeerService.Services
             }
             foreach(var purchase in purchases){
                 new PurchaseOrderRepository().Add(purchase);
+                PurchaseOrderProvider(api, purchase);
             }
         }
 

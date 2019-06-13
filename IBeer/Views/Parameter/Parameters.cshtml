@@ -18,11 +18,30 @@
             <tbody>
                 @foreach (var parameter in Model)
                 {
-                    <tr>
-                        <td>@parameter.Description</td>
-                        <td>@parameter.Value</td>
-                        <td>@Html.ActionLink("Edit", "Parameter", new { id = parameter.Id })</td>
-                    </tr>
+                <tr>
+                    <td>@parameter.Description</td>
+                    @if (parameter.Value == "1")
+                    {
+                        <td>Mínimo</td>
+                    }
+                    @if (parameter.Value == "2")
+                    {
+                        <td>Médio</td>
+                    }
+                    @if (parameter.Value == "3")
+                    {
+                        <td>Máximo</td>
+                    }
+                    @if (parameter.Value == "False")
+                    {
+                        <td>Não</td>
+                    }
+                    @if (parameter.Value == "True")
+                    {
+                        <td>Sim</td>
+                    }
+                    <td>@Html.ActionLink("Edit", "Parameter", new { id = parameter.Id })</td>
+                </tr>
                 }
             </tbody>
         </table>
